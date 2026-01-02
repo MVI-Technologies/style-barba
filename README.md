@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+# ✂️ Style Barba - Landing Page para Barbearia
 
-## Project info
+Uma landing page moderna e elegante para barbearias, construída com React, TypeScript e Tailwind CSS. Design premium com tema escuro e detalhes dourados que transmite sofisticação e profissionalismo.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?logo=vite&logoColor=white)
 
-## How can I edit this code?
+## ✨ Funcionalidades
 
-There are several ways of editing your application.
+- 🎨 **Design Premium** - Interface elegante com tema escuro e acentos dourados
+- 📱 **Totalmente Responsivo** - Adaptado para todos os dispositivos
+- 💬 **Integração WhatsApp** - Botões de agendamento direto pelo WhatsApp
+- ⚡ **Performance Otimizada** - Construído com Vite para carregamento ultra-rápido
+- 🧩 **Componentes Reutilizáveis** - Baseado em ShadCN UI
 
-**Use Lovable**
+## 📋 Seções da Página
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+| Seção | Descrição |
+|-------|-----------|
+| **Hero** | Banner principal com estatísticas e chamada para ação |
+| **Sobre** | Apresentação da barbearia e sua história |
+| **Serviços** | Cards com serviços, preços e duração |
+| **Diferenciais** | O que torna a barbearia única |
+| **Depoimentos** | Avaliações de clientes satisfeitos |
+| **Galeria** | Fotos do ambiente e trabalhos realizados |
+| **CTA** | Chamada final para agendamento |
+| **Footer** | Informações de contato e horários |
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Como Executar
 
-**Use your preferred IDE**
+### Pré-requisitos
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- [Node.js](https://nodejs.org/) (versão 18 ou superior)
+- npm ou yarn
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Instalação
 
-Follow these steps:
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/style-barba.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Acesse a pasta do projeto
+cd style-barba
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Instale as dependências
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível em `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Scripts Disponíveis
 
-**Use GitHub Codespaces**
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera a build de produção |
+| `npm run preview` | Visualiza a build de produção localmente |
+| `npm run lint` | Executa o linter no código |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🛠️ Tecnologias Utilizadas
 
-## What technologies are used for this project?
+- **[React 18](https://react.dev/)** - Biblioteca para interfaces de usuário
+- **[TypeScript](https://www.typescriptlang.org/)** - Superset JavaScript com tipagem estática
+- **[Vite](https://vitejs.dev/)** - Build tool moderna e rápida
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework CSS utilitário
+- **[ShadCN UI](https://ui.shadcn.com/)** - Componentes acessíveis e customizáveis
+- **[React Router](https://reactrouter.com/)** - Roteamento para React
+- **[Lucide React](https://lucide.dev/)** - Ícones modernos
+- **[TanStack Query](https://tanstack.com/query)** - Gerenciamento de estado assíncrono
 
-This project is built with:
+## 📁 Estrutura do Projeto
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+src/
+├── assets/              # Imagens e recursos estáticos
+├── components/          # Componentes React
+│   ├── ui/              # Componentes base (ShadCN)
+│   ├── Navbar.tsx
+│   ├── HeroSection.tsx
+│   ├── AboutSection.tsx
+│   ├── ServicesSection.tsx
+│   ├── DifferentialsSection.tsx
+│   ├── TestimonialsSection.tsx
+│   ├── GallerySection.tsx
+│   ├── CTASection.tsx
+│   └── Footer.tsx
+├── hooks/               # Hooks customizados
+├── lib/                 # Utilitários
+├── pages/               # Páginas da aplicação
+└── main.tsx             # Ponto de entrada
+```
 
-## How can I deploy this project?
+## 🎨 Personalização
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Cores
 
-## Can I connect a custom domain to my Lovable project?
+As cores do tema podem ser ajustadas no arquivo `src/index.css` através das variáveis CSS:
 
-Yes, you can!
+```css
+:root {
+  --primary: /* Cor dourada principal */
+  --background: /* Cor de fundo */
+  --foreground: /* Cor do texto */
+  /* ... outras variáveis */
+}
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Informações da Barbearia
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Para personalizar com os dados da sua barbearia, edite os seguintes arquivos:
+
+- **WhatsApp**: Altere o número em `HeroSection.tsx` e `ServicesSection.tsx`
+- **Serviços e Preços**: Edite o array `services` em `ServicesSection.tsx`
+- **Contato e Endereço**: Atualize as informações em `Footer.tsx`
+- **Imagens**: Substitua os arquivos em `src/assets/`
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+<p align="center">
+  Feito com ♠ para homens de estilo
+</p>
