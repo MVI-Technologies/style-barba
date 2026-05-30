@@ -13,7 +13,7 @@ Uma landing page moderna e elegante para barbearias, construída com React, Type
 - 📱 **Totalmente Responsivo** - Adaptado para todos os dispositivos
 - 💬 **Integração WhatsApp** - Botões de agendamento direto pelo WhatsApp
 - ⚡ **Performance Otimizada** - Construído com Vite para carregamento ultra-rápido
-- 🧩 **Componentes Reutilizáveis** - Baseado em ShadCN UI
+- 🧩 **Componentes Reutilizáveis** - Baseado em ShadCn UI
 
 ## 📋 Seções da Página
 
