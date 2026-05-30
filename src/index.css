@@ -23,7 +23,7 @@
     --secondary-foreground: 36 47% 91%;
 
     --muted:             20 10% 16%;
-    --muted-foreground:  30 10% 56%;   /* #9e9080 */
+    --muted-foreground:  30 10% 66%;   /* #b8a898 — WCAG AA ≥4.5:1 */
 
     --accent:            36 44% 61%;
     --accent-foreground: 20 12% 9%;
@@ -50,7 +50,8 @@
     --hex-card:       #201c19;
     --hex-gold:       #c9a96e;
     --hex-heading:    #f0e8d8;
-    --hex-muted:      #9e9080;
+    --hex-muted:      #b8a898;   /* raised from #9e9080 for WCAG AA */
+    --hex-muted-dim:  #8a7d70;   /* raised from #6b6158 for WCAG AA */
     --hex-footer:     #100e0c;
 
     /* ── Borders ── */
@@ -76,7 +77,7 @@
 
   body {
     background-color: #1a1614;
-    color: #f0e8d8;
+    color: #f0e8d8;  /* #f0e8d8 on #1a1614 = ~12:1 ✓ */
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -211,5 +212,26 @@
   @keyframes shimmer {
     0%   { background-position: -200% 0; }
     100% { background-position:  200% 0; }
+  }
+
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(201, 169, 110, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 169, 110, 0); }
+  }
+
+  .animate-pulse-ring {
+    animation: pulse-ring 3s ease-out infinite;
+  }
+
+  .group-hover\:scale-107:is(.group:hover *) {
+    --tw-scale-x: 1.07;
+    --tw-scale-y: 1.07;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate))
+      skewX(var(--tw-skew-x))
+      skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x))
+      scaleY(var(--tw-scale-y));
   }
 }

@@ -1,4 +1,5 @@
-import { Clock, Instagram, Mail, MapPin, Phone, Scissors } from "lucide-react";
+import { Clock, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const whatsappLink =
   "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
@@ -14,10 +15,11 @@ const Footer = () => {
             {/* Brand */}
             <div className="lg:col-span-1">
               <a href="#" className="flex items-center gap-2.5 mb-4 group w-fit">
-                <Scissors
-                  strokeWidth={1.5}
-                  className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
-                  style={{ color: "#c9a96e" }}
+                <img
+                  src={logoImg}
+                  alt="Logo"
+                  className="w-10 h-10 object-contain rounded-full border border-opacity-20 transition-transform duration-300 group-hover:scale-105"
+                  style={{ borderColor: "#c9a96e" }}
                 />
                 <span
                   className="font-display font-bold text-lg"
@@ -31,7 +33,7 @@ const Footer = () => {
                 style={{
                   fontFamily: "Inter, sans-serif",
                   fontSize: "13px",
-                  color: "#9e9080",
+                  color: "#b8a898",
                   lineHeight: 1.7,
                 }}
               >
@@ -46,7 +48,7 @@ const Footer = () => {
                   className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200"
                   style={{
                     border: "1px solid rgba(201,169,110,0.35)",
-                    color: "#9e9080",
+                    color: "#b8a898",
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement;
@@ -57,7 +59,7 @@ const Footer = () => {
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     el.style.backgroundColor = "transparent";
-                    el.style.color = "#9e9080";
+                    el.style.color = "#b8a898";
                     el.style.borderColor = "rgba(201,169,110,0.35)";
                   }}
                   aria-label="Instagram"
@@ -92,7 +94,7 @@ const Footer = () => {
                     style={{
                       fontFamily: "Inter, sans-serif",
                       fontSize: "13px",
-                      color: "#9e9080",
+                      color: "#b8a898",
                       lineHeight: 1.6,
                     }}
                   >
@@ -111,14 +113,14 @@ const Footer = () => {
                     style={{
                       fontFamily: "Inter, sans-serif",
                       fontSize: "13px",
-                      color: "#9e9080",
+                      color: "#b8a898",
                       transition: "color 0.2s",
                     }}
                     onMouseEnter={(e) =>
                       ((e.target as HTMLElement).style.color = "#c9a96e")
                     }
                     onMouseLeave={(e) =>
-                      ((e.target as HTMLElement).style.color = "#9e9080")
+                      ((e.target as HTMLElement).style.color = "#b8a898")
                     }
                   >
                     (11) 99999-9999
@@ -134,14 +136,14 @@ const Footer = () => {
                     style={{
                       fontFamily: "Inter, sans-serif",
                       fontSize: "13px",
-                      color: "#9e9080",
+                      color: "#b8a898",
                       transition: "color 0.2s",
                     }}
                     onMouseEnter={(e) =>
                       ((e.target as HTMLElement).style.color = "#c9a96e")
                     }
                     onMouseLeave={(e) =>
-                      ((e.target as HTMLElement).style.color = "#9e9080")
+                      ((e.target as HTMLElement).style.color = "#b8a898")
                     }
                   >
                     contato@thegentlemanscut.com
@@ -198,7 +200,7 @@ const Footer = () => {
                         style={{
                           fontFamily: "Inter, sans-serif",
                           fontSize: "12px",
-                          color: "#9e9080",
+                          color: "#b8a898",
                         }}
                       >
                         {item.hours}
@@ -241,14 +243,14 @@ const Footer = () => {
                       style={{
                         fontFamily: "Inter, sans-serif",
                         fontSize: "13px",
-                        color: "#9e9080",
+                        color: "#b8a898",
                         transition: "color 0.2s",
                       }}
                       onMouseEnter={(e) =>
                         ((e.target as HTMLElement).style.color = "#c9a96e")
                       }
                       onMouseLeave={(e) =>
-                        ((e.target as HTMLElement).style.color = "#9e9080")
+                        ((e.target as HTMLElement).style.color = "#b8a898")
                       }
                     >
                       {link.label}
@@ -268,7 +270,7 @@ const Footer = () => {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "12px",
-              color: "#6b6158",
+              color: "#8a7d70",
             }}
           >
             © 2024 The Gentleman's Cut. Todos os direitos reservados.
@@ -277,7 +279,7 @@ const Footer = () => {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "12px",
-              color: "#6b6158",
+              color: "#8a7d70",
             }}
           >
             Feito com ♠ para homens de estilo.

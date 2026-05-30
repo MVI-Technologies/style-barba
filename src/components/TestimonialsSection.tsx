@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
     <section
       id="depoimentos"
       style={{ backgroundColor: "#141210" }}
-      className="py-24"
+      className="pt-12 pb-24"
     >
       <div className="container">
 
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "14px",
-              color: "#9e9080",
+              color: "#b8a898",
               maxWidth: "440px",
               margin: "0 auto",
               lineHeight: 1.7,
@@ -102,7 +102,7 @@ const TestimonialsSection = () => {
                 style={{
                   fontFamily: "Inter, sans-serif",
                   fontSize: "14px",
-                  color: "#9e9080",
+                  color: "#b8a898",
                   lineHeight: 1.75,
                   fontStyle: "italic",
                 }}
@@ -146,7 +146,7 @@ const TestimonialsSection = () => {
                     style={{
                       fontFamily: "Inter, sans-serif",
                       fontSize: "11px",
-                      color: "#9e9080",
+                      color: "#b8a898",
                     }}
                   >
                     {testimonial.role}
@@ -186,7 +186,7 @@ const TestimonialsSection = () => {
                 style={{
                   fontFamily: "Inter, sans-serif",
                   fontSize: "12px",
-                  color: "#9e9080",
+                  color: "#b8a898",
                 }}
               >
                 Avaliação média
@@ -210,7 +210,7 @@ const TestimonialsSection = () => {
               style={{
                 fontFamily: "Inter, sans-serif",
                 fontSize: "12px",
-                color: "#9e9080",
+                color: "#b8a898",
               }}
             >
               Avaliações no Google
@@ -233,7 +233,7 @@ const TestimonialsSection = () => {
               style={{
                 fontFamily: "Inter, sans-serif",
                 fontSize: "12px",
-                color: "#9e9080",
+                color: "#b8a898",
               }}
             >
               Clientes satisfeitos

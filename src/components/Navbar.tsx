@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Scissors, X, Menu } from "lucide-react";
-import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import { Link } from "react-router-dom";
+import { X, Menu } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Sobre", href: "#sobre" },
@@ -9,8 +10,6 @@ const navLinks = [
   { label: "Depoimentos", href: "#depoimentos" },
   { label: "Galeria", href: "#galeria" },
 ];
-
-const whatsappLink = "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,10 +37,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <Scissors
-              strokeWidth={1.5}
-              className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
-              style={{ color: "#c9a96e" }}
+            <img
+              src={logoImg}
+              alt="Logo"
+              className="w-10 h-10 object-contain rounded-full border border-opacity-20 transition-transform duration-300 group-hover:scale-105"
+              style={{ borderColor: "#c9a96e" }}
             />
             <span
               className="font-display font-bold text-lg tracking-wide"
@@ -60,13 +60,13 @@ const Navbar = () => {
                 className="relative text-sm transition-colors duration-200"
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  color: "#9e9080",
+                  color: "#b8a898",
                 }}
                 onMouseEnter={(e) =>
                   ((e.target as HTMLElement).style.color = "#c9a96e")
                 }
                 onMouseLeave={(e) =>
-                  ((e.target as HTMLElement).style.color = "#9e9080")
+                  ((e.target as HTMLElement).style.color = "#b8a898")
                 }
               >
                 {link.label}
@@ -76,10 +76,8 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/agendar"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md font-semibold text-sm transition-all duration-200"
               style={{
                 backgroundColor: "#c9a96e",
@@ -93,15 +91,14 @@ const Navbar = () => {
                 ((e.currentTarget as HTMLElement).style.backgroundColor = "#c9a96e")
               }
             >
-              <WhatsAppIcon style={{ width: "16px", height: "16px" }} />
-              Agendar
-            </a>
+              Agendar Online
+            </Link>
           </div>
 
           {/* Mobile toggle */}
           <button
             className="lg:hidden p-2"
-            style={{ color: "#9e9080" }}
+            style={{ color: "#b8a898" }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Abrir menu"
           >
@@ -130,7 +127,7 @@ const Navbar = () => {
                 className="py-3 text-base transition-colors duration-200"
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  color: "#9e9080",
+                  color: "#b8a898",
                   borderBottom: "1px solid rgba(201,169,110,0.08)",
                 }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -138,26 +135,24 @@ const Navbar = () => {
                   ((e.target as HTMLElement).style.color = "#c9a96e")
                 }
                 onMouseLeave={(e) =>
-                  ((e.target as HTMLElement).style.color = "#9e9080")
+                  ((e.target as HTMLElement).style.color = "#b8a898")
                 }
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/agendar"
               className="mt-4 inline-flex items-center justify-center gap-2 py-3 rounded-md font-semibold text-sm"
               style={{
                 backgroundColor: "#c9a96e",
                 color: "#1a1614",
                 fontFamily: "Inter, sans-serif",
               }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
-              <WhatsAppIcon style={{ width: "16px", height: "16px" }} />
-              Agendar pelo WhatsApp
-            </a>
+              Agendar Online
+            </Link>
           </div>
         </div>
       )}

@@ -29,7 +29,7 @@ const AboutSection = () => {
     <section
       id="sobre"
       style={{ backgroundColor: "#1a1614" }}
-      className="py-24 overflow-hidden"
+      className="pt-12 pb-24 overflow-hidden"
     >
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-0 items-stretch min-h-[560px]">
@@ -81,7 +81,7 @@ const AboutSection = () => {
               <p
                 style={{
                   fontSize: "12px",
-                  color: "#9e9080",
+                  color: "#b8a898",
                   lineHeight: 1.5,
                   fontFamily: "Inter, sans-serif",
                 }}
@@ -151,7 +151,7 @@ const AboutSection = () => {
               className="mb-4 leading-relaxed"
               style={{
                 fontSize: "14px",
-                color: "#9e9080",
+                color: "#b8a898",
                 fontFamily: "Inter, sans-serif",
                 maxWidth: "420px",
               }}
@@ -165,7 +165,7 @@ const AboutSection = () => {
               className="mb-10 leading-relaxed"
               style={{
                 fontSize: "14px",
-                color: "#9e9080",
+                color: "#b8a898",
                 fontFamily: "Inter, sans-serif",
                 maxWidth: "420px",
               }}
@@ -218,7 +218,7 @@ const AboutSection = () => {
                     <p
                       style={{
                         fontSize: "12px",
-                        color: "#9e9080",
+                        color: "#b8a898",
                         fontFamily: "Inter, sans-serif",
                         lineHeight: 1.5,
                       }}

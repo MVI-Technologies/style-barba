@@ -1,12 +1,10 @@
 import { Scissors } from "lucide-react";
-import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-barbershop.jpg";
-
-const whatsappLink = "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-start overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -33,7 +31,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 py-32 lg:py-40">
+      <div className="container relative z-10 pt-28 pb-16 lg:pt-36 lg:pb-24">
         <div className="max-w-2xl">
 
           {/* Badge */}
@@ -76,7 +74,7 @@ const HeroSection = () => {
               Mais que um corte.
             </span>
             <span style={{ display: "block", color: "#c9a96e" }}>
-              Um estilo.
+              Um style.
             </span>
           </h1>
 
@@ -86,7 +84,7 @@ const HeroSection = () => {
             style={{
               fontFamily: "Inter, sans-serif",
               fontSize: "16px",
-              color: "#9e9080",
+              color: "#b8a898",
               lineHeight: 1.7,
               maxWidth: "460px",
               animationDelay: "0.2s",
@@ -102,10 +100,8 @@ const HeroSection = () => {
             style={{ animationDelay: "0.3s" }}
           >
             {/* Primary */}
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/agendar"
               className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-md font-semibold transition-all duration-200"
               style={{
                 backgroundColor: "#c9a96e",
@@ -120,9 +116,8 @@ const HeroSection = () => {
                 ((e.currentTarget as HTMLElement).style.backgroundColor = "#c9a96e")
               }
             >
-              <WhatsAppIcon style={{ width: "18px", height: "18px" }} />
-              Agendar pelo WhatsApp
-            </a>
+              Agendar Online
+            </Link>
 
             {/* Secondary */}
             <a
@@ -152,7 +147,7 @@ const HeroSection = () => {
 
           {/* Stats */}
           <div
-            className="grid grid-cols-3 gap-6 mt-16 pt-8 animate-fade-up"
+            className="grid grid-cols-3 gap-6 mt-4 pt-4 animate-fade-up"
             style={{
               borderTop: "1px solid rgba(201,169,110,0.18)",
               animationDelay: "0.4s",
@@ -178,7 +173,7 @@ const HeroSection = () => {
                   style={{
                     fontFamily: "Inter, sans-serif",
                     fontSize: "12px",
-                    color: "#9e9080",
+                    color: "#b8a898",
                     marginTop: "4px",
                   }}
                 >
