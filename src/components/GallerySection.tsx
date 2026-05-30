@@ -12,33 +12,78 @@ const images = [
 
 const GallerySection = () => {
   return (
-    <section id="galeria" className="py-24 bg-charcoal-light">
+    <section
+      id="galeria"
+      style={{ backgroundColor: "#1a1614" }}
+      className="py-24"
+    >
       <div className="container">
+
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">Galeria</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
-            Conheça nosso <span className="text-gradient">espaço</span>
+        <div className="text-center mb-16">
+          <span className="eyebrow-center">Galeria</span>
+          <h2
+            className="font-display font-bold mt-5 mb-4"
+            style={{ fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.15 }}
+          >
+            <span style={{ color: "#f0e8d8" }}>Conheça nosso </span>
+            <span style={{ color: "#c9a96e" }}>espaço</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Um ambiente pensado para oferecer conforto, estilo e a melhor experiência em barbearia.
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              color: "#9e9080",
+              maxWidth: "440px",
+              margin: "0 auto",
+              lineHeight: 1.7,
+            }}
+          >
+            Um ambiente pensado para oferecer conforto, estilo e a melhor
+            experiência em barbearia.
           </p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3" style={{ gridAutoRows: "200px" }}>
           {images.map((image, index) => (
             <div
               key={index}
-              className={`relative rounded-lg overflow-hidden group ${image.span}`}
+              className={`relative overflow-hidden group ${image.span}`}
+              style={{
+                borderRadius: "12px",
+                border: "1px solid rgba(201,169,110,0.12)",
+                transition: "border-color 0.25s ease",
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.borderColor =
+                  "rgba(201,169,110,0.42)")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.borderColor =
+                  "rgba(201,169,110,0.12)")
+              }
             >
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover min-h-[200px] transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span className="text-foreground font-medium">{image.alt}</span>
+
+              {/* Hover overlay */}
+              <div
+                className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(20,18,16,0.78) 0%, transparent 60%)",
+                }}
+              >
+                <span
+                  className="font-display font-medium"
+                  style={{ fontSize: "15px", color: "#c9a96e" }}
+                >
+                  {image.alt}
+                </span>
               </div>
             </div>
           ))}

@@ -1,43 +1,113 @@
-import { Button } from "@/components/ui/button";
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
+
+const whatsappLink =
+  "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
 
 const CTASection = () => {
-  const whatsappLink = "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
-
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-
+    <section
+      style={{ backgroundColor: "#141210" }}
+      className="py-24 relative overflow-hidden"
+    >
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
-            Pronto para elevar seu <span className="text-gradient">estilo</span>?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-xl mx-auto">
-            Agende agora mesmo e experimente o que há de melhor em cuidados masculinos. 
-            Sua transformação começa aqui.
-          </p>
+        <div className="max-w-2xl mx-auto text-center">
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="gold" size="xl" className="group" asChild>
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
-                Agendar pelo WhatsApp
-              </a>
-            </Button>
-            <Button variant="outline" size="xl" asChild>
-              <a href="tel:+5511999999999">
-                <Phone className="w-5 h-5" />
-                (11) 99999-9999
-              </a>
-            </Button>
+          {/* Eyebrow */}
+          <div className="flex justify-center mb-7">
+            <span className="eyebrow-center">Pronto para começar</span>
           </div>
 
-          <p className="text-sm text-muted-foreground mt-8">
-            Resposta rápida • Confirmação imediata • Sem filas
+          {/* Heading */}
+          <h2
+            className="font-display font-bold mb-5"
+            style={{ fontSize: "clamp(32px, 5vw, 54px)", lineHeight: 1.1 }}
+          >
+            <span style={{ display: "block", color: "#f0e8d8" }}>
+              Pronto para elevar
+            </span>
+            <span style={{ display: "block", color: "#c9a96e" }}>
+              seu estilo?
+            </span>
+          </h2>
+
+          <p
+            className="mb-10"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "15px",
+              color: "#9e9080",
+              lineHeight: 1.75,
+              maxWidth: "440px",
+              margin: "0 auto 40px",
+            }}
+          >
+            Agende agora mesmo e experimente o que há de melhor em cuidados
+            masculinos. Sua transformação começa aqui.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-md font-semibold transition-all duration-200"
+              style={{
+                backgroundColor: "#c9a96e",
+                color: "#1a1614",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.backgroundColor = "#d4b87a")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.backgroundColor = "#c9a96e")
+              }
+            >
+              <WhatsAppIcon style={{ width: "18px", height: "18px" }} />
+              Agendar pelo WhatsApp
+            </a>
+
+            <a
+              href="tel:+5511999999999"
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-md font-medium transition-all duration-200"
+              style={{
+                border: "1px solid rgba(201,169,110,0.45)",
+                color: "#c9a96e",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                backgroundColor: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.backgroundColor = "rgba(201,169,110,0.08)";
+                el.style.borderColor = "rgba(201,169,110,0.65)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.backgroundColor = "transparent";
+                el.style.borderColor = "rgba(201,169,110,0.45)";
+              }}
+            >
+              <Phone
+                strokeWidth={1.5}
+                style={{ width: "16px", height: "16px" }}
+              />
+              (11) 99999-9999
+            </a>
+          </div>
+
+          {/* Micro-copy */}
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "12px",
+              color: "#6b6158",
+            }}
+          >
+            Resposta rápida&nbsp;·&nbsp;Confirmação imediata&nbsp;·&nbsp;Sem filas
           </p>
         </div>
       </div>

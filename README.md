@@ -1,4 +1,4 @@
-# ✂️ Style Barba - Landing Page para Barbearia
+# ✂️ The Gentleman's Cut - Landing Page para Barbearia
 
 Uma landing page moderna e elegante para barbearias, construída com React, TypeScript e Tailwind CSS. Design premium com tema escuro e detalhes dourados que transmite sofisticação e profissionalismo.
 

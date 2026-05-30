@@ -1,107 +1,243 @@
-import { Quote, Star } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
     name: "Lucas Mendes",
     role: "Cliente há 3 anos",
-    content: "Depois que conheci essa barbearia, não consigo cortar em outro lugar. O atendimento é impecável e os barbeiros realmente entendem o que você quer.",
+    content:
+      "Depois que conheci essa barbearia, não consigo cortar em outro lugar. O atendimento é impecável e os barbeiros realmente entendem o que você quer.",
     rating: 5,
   },
   {
     name: "Rafael Costa",
     role: "Cliente há 1 ano",
-    content: "O ambiente é sensacional, os caras são super profissionais e o café é de primeira! Vale cada centavo investido na experiência completa.",
+    content:
+      "O ambiente é sensacional, os caras são super profissionais e o café é de primeira! Vale cada centavo investido na experiência completa.",
     rating: 5,
   },
   {
     name: "Thiago Oliveira",
     role: "Cliente há 2 anos",
-    content: "Minha barba nunca ficou tão bem cuidada. O tratamento premium é incrível, saio de lá me sentindo outro homem. Recomendo demais!",
+    content:
+      "Minha barba nunca ficou tão bem cuidada. O tratamento premium é incrível, saio de lá me sentindo outro homem. Recomendo demais!",
     rating: 5,
   },
   {
     name: "Marcelo Silva",
     role: "Cliente há 6 meses",
-    content: "Descobri a barbearia por indicação de um amigo e virei cliente fiel. O plano mensal é uma economia absurda para quem gosta de manter o corte em dia.",
+    content:
+      "Descobri a barbearia por indicação de um amigo e virei cliente fiel. O plano mensal é uma economia absurda para quem gosta de manter o corte em dia.",
     rating: 5,
   },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section id="depoimentos" className="py-24 bg-background">
+    <section
+      id="depoimentos"
+      style={{ backgroundColor: "#141210" }}
+      className="py-24"
+    >
       <div className="container">
+
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-primary font-medium tracking-wider uppercase text-sm">Depoimentos</span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold mt-4 mb-6">
-            O que nossos clientes <span className="text-gradient">dizem</span>
+        <div className="text-center mb-16">
+          <span className="eyebrow-center">Depoimentos</span>
+          <h2
+            className="font-display font-bold mt-5 mb-4"
+            style={{ fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.15 }}
+          >
+            <span style={{ color: "#f0e8d8" }}>O que nossos clientes </span>
+            <span style={{ color: "#c9a96e" }}>dizem</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            A satisfação dos nossos clientes é nossa maior conquista. Confira alguns depoimentos.
+          <p
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              color: "#9e9080",
+              maxWidth: "440px",
+              margin: "0 auto",
+              lineHeight: 1.7,
+            }}
+          >
+            A satisfação dos nossos clientes é nossa maior conquista. Confira
+            alguns depoimentos.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-5">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="relative p-8 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
+              className="surface-card p-7 relative"
             >
-              {/* Quote icon */}
-              <Quote className="absolute top-6 right-6 w-10 h-10 text-primary/20" />
-              
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
+              {/* Large quote mark */}
+              <div
+                className="absolute top-5 right-6 font-display font-bold select-none pointer-events-none"
+                style={{ fontSize: "72px", color: "rgba(201,169,110,0.08)", lineHeight: 1 }}
+                aria-hidden
+              >
+                "
+              </div>
+
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-5">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star
+                    key={i}
+                    style={{
+                      width: "14px",
+                      height: "14px",
+                      fill: "#c9a96e",
+                      color: "#c9a96e",
+                    }}
+                  />
                 ))}
               </div>
 
-              {/* Content */}
-              <p className="text-foreground mb-6 leading-relaxed text-lg">
+              {/* Quote */}
+              <p
+                className="mb-6 relative z-10"
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  color: "#9e9080",
+                  lineHeight: 1.75,
+                  fontStyle: "italic",
+                }}
+              >
                 "{testimonial.content}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-lg font-display font-bold text-primary">
-                    {testimonial.name.split(" ").map(n => n[0]).join("")}
+              <div className="flex items-center gap-3">
+                <div
+                  className="flex items-center justify-center rounded-full shrink-0"
+                  style={{
+                    width: "40px",
+                    height: "40px",
+                    backgroundColor: "rgba(201,169,110,0.1)",
+                    border: "1px solid rgba(201,169,110,0.35)",
+                  }}
+                >
+                  <span
+                    className="font-display font-bold"
+                    style={{ fontSize: "14px", color: "#c9a96e" }}
+                  >
+                    {testimonial.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
                   </span>
                 </div>
                 <div>
-                  <div className="font-semibold">{testimonial.name}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                  <div
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "13px",
+                      fontWeight: 600,
+                      color: "#f0e8d8",
+                    }}
+                  >
+                    {testimonial.name}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "Inter, sans-serif",
+                      fontSize: "11px",
+                      color: "#9e9080",
+                    }}
+                  >
+                    {testimonial.role}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Rating summary */}
-        <div className="mt-16 p-8 rounded-xl bg-secondary/50 border border-border flex flex-col md:flex-row items-center justify-center gap-8 text-center md:text-left">
-          <div className="flex items-center gap-2">
-            <div className="text-5xl font-display font-bold text-gradient">4.9</div>
-            <div className="flex flex-col">
+        {/* Rating Summary */}
+        <div
+          className="mt-12 p-8 rounded-xl flex flex-col md:flex-row items-center justify-center gap-8 text-center"
+          style={{
+            backgroundColor: "#201c19",
+            border: "1px solid rgba(201,169,110,0.16)",
+          }}
+        >
+          {/* 4.9 */}
+          <div className="flex items-center gap-3">
+            <span
+              className="font-display font-bold"
+              style={{ fontSize: "48px", color: "#c9a96e", lineHeight: 1 }}
+            >
+              4.9
+            </span>
+            <div className="flex flex-col items-start gap-1">
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  <Star
+                    key={i}
+                    style={{ width: "13px", height: "13px", fill: "#c9a96e", color: "#c9a96e" }}
+                  />
                 ))}
               </div>
-              <span className="text-sm text-muted-foreground">Avaliação média</span>
+              <span
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "12px",
+                  color: "#9e9080",
+                }}
+              >
+                Avaliação média
+              </span>
             </div>
           </div>
-          <div className="w-px h-12 bg-border hidden md:block" />
+
+          <div
+            className="hidden md:block w-px h-10"
+            style={{ backgroundColor: "rgba(201,169,110,0.18)" }}
+          />
+
           <div>
-            <div className="text-3xl font-display font-bold">+500</div>
-            <span className="text-sm text-muted-foreground">Avaliações no Google</span>
+            <div
+              className="font-display font-bold"
+              style={{ fontSize: "30px", color: "#f0e8d8" }}
+            >
+              +500
+            </div>
+            <span
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                color: "#9e9080",
+              }}
+            >
+              Avaliações no Google
+            </span>
           </div>
-          <div className="w-px h-12 bg-border hidden md:block" />
+
+          <div
+            className="hidden md:block w-px h-10"
+            style={{ backgroundColor: "rgba(201,169,110,0.18)" }}
+          />
+
           <div>
-            <div className="text-3xl font-display font-bold">98%</div>
-            <span className="text-sm text-muted-foreground">Clientes satisfeitos</span>
+            <div
+              className="font-display font-bold"
+              style={{ fontSize: "30px", color: "#f0e8d8" }}
+            >
+              98%
+            </div>
+            <span
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "12px",
+                color: "#9e9080",
+              }}
+            >
+              Clientes satisfeitos
+            </span>
           </div>
         </div>
       </div>

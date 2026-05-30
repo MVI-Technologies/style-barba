@@ -1,91 +1,205 @@
-import { Button } from "@/components/ui/button";
-import { MessageCircle, Scissors } from "lucide-react";
+import { Scissors } from "lucide-react";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import heroImage from "@/assets/hero-barbershop.jpg";
 
-const HeroSection = () => {
-  const whatsappLink = "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
+const whatsappLink = "https://wa.me/5511999999999?text=Olá! Gostaria de agendar um horário.";
 
+const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Barbearia Premium"
+          alt="Interior da barbearia The Gentleman's Cut"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        {/* Left→right dark fade */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, #1a1614 0%, rgba(26,22,20,0.88) 40%, rgba(26,22,20,0.5) 70%, rgba(26,22,20,0.2) 100%)",
+          }}
+        />
+        {/* Bottom fade to next section */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent 60%, #1a1614 100%)",
+          }}
+        />
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 py-20 lg:py-32">
-        <div className="max-w-3xl">
+      <div className="container relative z-10 py-32 lg:py-40">
+        <div className="max-w-2xl">
+
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10 mb-8 animate-fade-up">
-            <Scissors className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Barbearia Premium</span>
+          <div
+            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full mb-10 animate-fade-up"
+            style={{
+              background: "rgba(20,15,10,0.82)",
+              border: "1px solid rgba(201,169,110,0.4)",
+              backdropFilter: "blur(8px)",
+            }}
+          >
+            <Scissors
+              strokeWidth={1.5}
+              style={{ width: "14px", height: "14px", color: "#c9a96e" }}
+            />
+            <span
+              style={{
+                fontFamily: "Inter, sans-serif",
+                fontSize: "11px",
+                fontWeight: 600,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "#c9a96e",
+              }}
+            >
+              Barbearia Premium · São Paulo
+            </span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            Mais que um corte.
-            <br />
-            <span className="text-gradient">Um estilo.</span>
+          <h1
+            className="font-display font-bold leading-tight mb-6 animate-fade-up"
+            style={{
+              fontSize: "clamp(40px, 6vw, 72px)",
+              animationDelay: "0.1s",
+              lineHeight: 1.1,
+            }}
+          >
+            <span style={{ display: "block", color: "#f0e8d8" }}>
+              Mais que um corte.
+            </span>
+            <span style={{ display: "block", color: "#c9a96e" }}>
+              Um estilo.
+            </span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-xl mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-            Tradição, técnica e atitude em cada detalhe. 
-            Experimente o que há de melhor em barbearia masculina.
+          <p
+            className="mb-10 animate-fade-up"
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "16px",
+              color: "#9e9080",
+              lineHeight: 1.7,
+              maxWidth: "460px",
+              animationDelay: "0.2s",
+            }}
+          >
+            Tradição, técnica e atitude em cada detalhe. Experimente o que há
+            de melhor em barbearia masculina.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.3s" }}>
-            <Button 
-              variant="gold" 
-              size="xl" 
-              className="group"
-              asChild
+          <div
+            className="flex flex-col sm:flex-row gap-3 animate-fade-up"
+            style={{ animationDelay: "0.3s" }}
+          >
+            {/* Primary */}
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-md font-semibold transition-all duration-200"
+              style={{
+                backgroundColor: "#c9a96e",
+                color: "#1a1614",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+              }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLElement).style.backgroundColor = "#d4b87a")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLElement).style.backgroundColor = "#c9a96e")
+              }
             >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5 transition-transform group-hover:scale-110" />
-                Agendar pelo WhatsApp
-              </a>
-            </Button>
-            <Button 
-              variant="goldOutline" 
-              size="xl"
-              asChild
+              <WhatsAppIcon style={{ width: "18px", height: "18px" }} />
+              Agendar pelo WhatsApp
+            </a>
+
+            {/* Secondary */}
+            <a
+              href="#servicos"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md font-medium transition-all duration-200"
+              style={{
+                border: "1px solid rgba(201,169,110,0.45)",
+                color: "#c9a96e",
+                fontFamily: "Inter, sans-serif",
+                fontSize: "14px",
+                backgroundColor: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.backgroundColor = "rgba(201,169,110,0.08)";
+                el.style.borderColor = "rgba(201,169,110,0.65)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLElement;
+                el.style.backgroundColor = "transparent";
+                el.style.borderColor = "rgba(201,169,110,0.45)";
+              }}
             >
-              <a href="#servicos">
-                Ver Serviços
-              </a>
-            </Button>
+              Ver Serviços
+            </a>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-border/30 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            <div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-gradient">10+</div>
-              <div className="text-sm text-muted-foreground mt-1">Anos de experiência</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-gradient">5000+</div>
-              <div className="text-sm text-muted-foreground mt-1">Clientes satisfeitos</div>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-display font-bold text-gradient">4.9</div>
-              <div className="text-sm text-muted-foreground mt-1">Avaliação média</div>
-            </div>
+          <div
+            className="grid grid-cols-3 gap-6 mt-16 pt-8 animate-fade-up"
+            style={{
+              borderTop: "1px solid rgba(201,169,110,0.18)",
+              animationDelay: "0.4s",
+            }}
+          >
+            {[
+              { value: "10+", label: "Anos de experiência" },
+              { value: "5.000+", label: "Clientes atendidos" },
+              { value: "4.9", label: "Avaliação média" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div
+                  className="font-display font-bold"
+                  style={{
+                    fontSize: "clamp(24px, 3vw, 36px)",
+                    color: "#c9a96e",
+                    lineHeight: 1.1,
+                  }}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "Inter, sans-serif",
+                    fontSize: "12px",
+                    color: "#9e9080",
+                    marginTop: "4px",
+                  }}
+                >
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-primary/50 flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-primary rounded-full" />
+        <div
+          className="w-6 h-10 rounded-full flex items-start justify-center p-2"
+          style={{ border: "1px solid rgba(201,169,110,0.4)" }}
+        >
+          <div
+            className="w-0.5 h-2 rounded-full"
+            style={{ backgroundColor: "#c9a96e" }}
+          />
         </div>
       </div>
     </section>
